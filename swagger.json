@@ -1,0 +1,93 @@
+{
+    "openapi": "3.0.3",
+    "info": {
+      "title": "HomeworkResfullAPI",
+      "description": "API DOCUMANTATION",
+      "license": {
+        "name": "Apache 2.0",
+        "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+      },
+      "version": "1.0.0"
+    },
+    "servers": [
+      {
+        "url": "http://localhost:3000/"
+      }
+    ],
+    "tags": [
+      {
+        "name": "users",
+        "description": "Everything about users"
+      },
+      {
+        "name": "movies",
+        "description": "Everything about movies"
+      }
+    ],
+    "paths": {
+      "/users": {
+        "get": {
+          "summary": "Get a list of users",
+          "description": "Retrieve a list of users from the database",
+          "responses": {
+            "200": {
+              "description": "A list of users",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "integer"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "email": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/movies": {
+        "get": {
+          "summary": "Get a list of movies",
+          "description": "Retrieve a list of movies from the database",
+          "responses": {
+            "200": {
+              "description": "A list of movies",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "integer"
+                        },
+                        "title": {
+                          "type": "string"
+                        },
+                        "year": {
+                          "type": "integer"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
